@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+<title>Database Manager</title>
+<link rel="stylesheet" href="style.css">
+<script src="request.js"></script>
+</head>
+<body>
+	<div class="main">
+		<div class="add_panel">
+			<div class="frame">
+				<div>Process Data</div>
+				<div id="data_info"></div>
+				<div style="border-top: 1px solid #DDDDDD; padding-top: 10px;">
+					<button onclick="CreateDatabases();">Create Databases</button>
+				</div>
+				<div><label for="playlist_url">Playlist URL:</label><input id="playlist_url" type="text" /><button onclick="DownloadURL(0);">Download</button></div>
+				<div><label for="epg_url">EPG URL:</label><input id="epg_url" type="text" /><button onclick="DownloadURL(1);">Download</button></div>
+				<div style="border-top: 1px solid #DDDDDD; padding-top: 10px;">
+					<button onclick="ProcessData(0);">Process TV Channels</button>
+					<button onclick="ProcessData(1);">Process Movies</button>
+					<button onclick="ProcessData(2);">Process TV Shows</button>
+				</div>
+				<div>
+					<button onclick="ProcessData(3);">Process EPG</button>
+				</div>
+			</div>
+			<div class="frame">
+				<div>Load Data</div>
+				<div>
+					<select name="load_data" id="load_data">
+						<option selected value="-1">None</option>
+						<option value="0">TV Channels</option>
+						<option value="1">Movies</option>
+						<option value="2">TV Shows</option>
+						<option value="3">Order Channel Numbers</option>
+					</select>
+				</div>
+				<div id="channel_controls" style="display: none;">
+					<button onclick="SortChannelNumbers();">Sort Channel Numbers</button>
+					<button onclick="ApplyOrder();">Apply Order</button>
+				</div>
+				<div id="order_controls" style="display: none;">
+					<input type="checkbox" id="order_children" name="order_children" onchange="OrderChildren();"><label for="order_children">Order Children</label>
+					<button onclick="SortByName();">Sort By Name</button>
+				</div>
+			</div>
+			<div id="group_input" class="frame" style="display: none;">
+				<div>Group</div>
+				<div><label for="group_name">Name:</label><div><input id="group_name" type="text" /></div></div>
+				<div>
+					<fieldset>
+						<legend>Group Type</legend>
+						<div>
+							<input type="radio" id="group_type_0" name="group_type" value="0" checked="checked">
+							<label for="group_type_0">Default</label>
+							<input type="radio" id="group_type_1" name="group_type" value="1">
+							<label for="group_type_1">Series</label>
+							<input type="radio" id="group_type_2" name="group_type" value="2">
+							<label for="group_type_2">Season</label>
+						</div>
+					</fieldset>
+				</div>
+				<div><label for="group_year">Year:</label><div><input id="group_year" type="text" /></div></div>
+				<div><label for="group_season">Season:</label><div><input id="group_season" type="text" /></div></div>
+				<div class="controls">
+					<button onclick="AddGroupToDatabase();">Add</button>
+					<button onclick="UpdateGroup();">Update</button>
+					<button onclick="RemoveGroup();">Remove Selected</button>
+				</div>
+			</div>
+			<div id="content_input" class="frame" style="display: none;">
+				<div>Content</div>
+				<div><label for="content_name">Name:</label><div><input id="content_name" type="text" /></div></div>
+				<div><label for="guide_name">Guide Name:</label><div><input id="guide_name" type="text" /></div></div>
+				<div><label for="season">Season:</label><div><input id="season" type="text" /></div></div>
+				<div><label for="episode">Episode:</label><div><input id="episode" type="text" /></div></div>
+				<div><label for="year">Year:</label><div><input id="year" type="text" /></div></div>
+				<div><label for="url">URL:</label><div><input id="url" type="text" /></div></div>
+				<div><label for="stream_type">Stream Type:</label><div><input id="stream_type" type="text" /></div></div>
+				<div><label for="subtitle_url">Subtitle URL:</label><div><input id="subtitle_url" type="text" /></div></div>
+				<div><label for="poster_url">Poster URL:</label><div><input id="poster_url" type="text" /></div></div>
+				<div><label for="headers">HTTP Headers:</label><div><textarea id="headers"></textarea></div></div>
+				<div class="controls">
+					<button onclick="AddContentToDatabase();">Add</button>
+					<button onclick="UpdateContent();">Update</button>
+					<button onclick="RemoveContent();">Remove Selected</button>
+				</div>
+			</div>
+		</div>
+		<div id="container" class="container">
+			<div class="content_panel numbers" id="channel_numbers"></div>
+			<div class="content_panel" id="groups_and_content"></div>
+			<div class="content_panel ungrouped" id="ungrouped_content"></div>
+		</div>
+	</div>
+</body>
+</html>

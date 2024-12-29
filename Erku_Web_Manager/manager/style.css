@@ -1,0 +1,230 @@
+body, html
+{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+.box
+{
+	border: 1px solid #BBBBBB;
+	padding: 2px;
+	margin-bottom: -1px;
+	background-color: #FFFFFF;
+    padding: 5px;
+    cursor: default;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.box:first-of-type
+{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.box:last-of-type
+{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.box:first-child
+{
+    margin-top: 10px;
+}
+
+.content_panel > div:first-child
+{
+    margin-top: 0px;
+}
+
+.group
+{
+	padding: 10px;
+}
+
+.group_info
+{
+    display: flex;
+    flex-direction: row;
+}
+.group_expand
+{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.group_name
+{
+    flex: 1;
+}
+
+.over_top
+{
+	position: relative;
+	border-top: 1px solid #FF0000;
+}
+.over_bottom
+{
+	position: relative;
+	border-bottom: 1px solid #FF0000;
+}
+.over_all
+{
+    position: relative;
+	border: 1px solid #FF0000;
+}
+.selected
+{
+	background-color: #EEEEEE;
+}
+.selected_container
+{
+    background-color: #FAFAFA;
+}
+.focused
+{
+    position: relative;
+    border: 1px solid #404040;
+}
+
+.frame
+{
+    border: 1px solid #BBBBBB;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    /*width: 500px;*/
+}
+
+.frame > div:first-of-type
+{
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.frame > div
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+    margin-top: 10px;
+}
+
+.frame > div > div
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.frame > div > input[type=text],
+.frame > div > div > input[type=text],
+.frame > div > div > textarea
+{
+    flex: 1;
+}
+
+.frame > .controls
+{
+    display: flex !important;
+    flex-direction: row;
+    column-gap: 5px;
+    border-top: 1px solid #DDDDDD;
+    padding-top: 10px;
+}
+
+#group_input > div,
+#content_input > div
+{
+    display: block;
+}
+
+fieldset
+{
+    border: 1px solid #808080;
+    margin: 0px;
+}
+
+.main
+{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0px 10px 10px;
+    height: calc(100vh - 20px);
+}
+.add_panel
+{
+    width: 540px;
+    height: 100%;
+    overflow: auto;
+    margin-right: 10px;
+}
+.content_panel
+{
+    flex: 1;
+    height: 100%;
+    padding-right: 10px;
+    overflow: auto;
+}
+
+
+.container
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.channel_numbers
+{
+    display: flex;
+    flex-direction: row;
+}
+.channel_numbers > div:last-of-type
+{
+    flex: 1;
+}
+
+.box.channel_numbers_numbers
+{
+    border-top: 1px solid #BBBBBB !important;
+    border-left: 1px solid #BBBBBB !important;
+    border-bottom: 1px solid #BBBBBB !important;
+    border-right-width: 0px !important;
+    height: 1.2em !important;
+}
+
+.box.channel_numbers_channels
+{
+    height: 1.2em !important;
+}
+
+.box.channel_numbers_numbers:first-of-type
+{
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 0px !important;
+}
+.box.channel_numbers_channels:first-of-type
+{
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 8px !important;
+}
+
+.box.channel_numbers_numbers:last-of-type
+{
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 0px !important;
+}
+.box.channel_numbers_channels:last-of-type
+{
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 8px !important;
+}

@@ -1,0 +1,9 @@
+#EXTM3U
+
+# DEPORTES
+
+#EXTINF:-1 tvg-logo="https://github.com/teleclubxyz/teleclub/blob/main/b31nsnn.png?raw=true" tvg-name="ESPN DFL" group-title="Deportes",Bein Sports Extra Ñ
+http://tv.teleclub.xyz/club/server_1/deportes/beinsportsextran/index.m3u8
+
+
+
